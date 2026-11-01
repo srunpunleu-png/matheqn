@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>គណិតវិទ្យា ថ្នាក់ទី៩</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--text:#1d2433;--muted:#667085;--brand:#2563eb;--onb:#fff;--ok:#16a34a;--okbg:#e8f7ee;--bad:#dc2626;--badbg:#fdecec;--line:#dfe3ec;--fm:#eef4ff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141d;--card:#1a2030;--text:#eef1f7;--muted:#98a2b3;--brand:#6b9bff;--onb:#10141d;--ok:#4ade80;--okbg:#14301f;--bad:#f87171;--badbg:#3a1a1a;--line:#2b3347;--fm:#1f2a44;color-scheme:dark}}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:"Noto Sans Khmer",system-ui,sans-serif;line-height:1.75;min-height:100vh}
+.wrap{max-width:600px;margin:0 auto;padding:14px}
+h1{font-size:1.2rem;margin:6px 0}h2{font-size:1.05rem;margin:16px 0 6px}
+.sub,.muted{color:var(--muted);font-size:.88rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+.ch{display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.ch.off{opacity:.55;cursor:default}
+.tag{display:inline-block;font-size:.75rem;padding:0 8px;border-radius:99px;background:var(--fm);color:var(--brand)}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin:8px 0 12px}
+.tab{flex:1;white-space:nowrap;font:inherit;font-size:.9rem;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 10px;cursor:pointer}
+.tab.on{background:var(--brand);color:var(--onb);border-color:var(--brand)}
+.fm{background:var(--fm);border-left:4px solid var(--brand);border-radius:8px;padding:8px 12px;margin:8px 0;font-weight:600;overflow-x:auto}
+.back{font:inherit;background:none;border:0;color:var(--brand);cursor:pointer;padding:4px 0}
+.btn{font:inherit;font-weight:600;background:var(--brand);color:var(--onb);border:0;border-radius:12px;padding:10px 16px;width:100%;margin-top:10px;cursor:pointer}
+.btn.sm{width:auto;padding:4px 12px;font-size:.88rem;margin-top:4px}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:8px;cursor:pointer}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}.opt.bad{border-color:var(--bad);background:var(--badbg)}
+.fb{border-radius:10px;padding:8px 12px;margin-top:6px}.fb.ok{background:var(--okbg)}.fb.bad{background:var(--badbg)}
+.ans{background:var(--okbg);border-radius:10px;padding:8px 12px;margin-top:6px}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--brand)}
+.score{font-size:2.6rem;font-weight:700;text-align:center;color:var(--brand)}
+.hide{display:none}ol,ul{padding-left:22px;margin:6px 0}
+mjx-container{font-size:108%}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'none'},startup:{typeset:false}};</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+var DATA=[{
+id:1,title:"សមីការដឺក្រេទី១ មួយអញ្ញាត",
+goals:["ស្គាល់និយមន័យសមីការដឺក្រេទី១ មួយអញ្ញាត","ដោះស្រាយសមីការដោយប្រើច្បាប់ប្តូរអង្គ","ផ្ទៀងផ្ទាត់ចម្លើយ និងដោះស្រាយចំណោទអត្ថបទ"],
+theory:["<b>និយមន័យ៖</b> សមីការដឺក្រេទី១ មួយអញ្ញាត គឺជាសមីការដែលអាចសរសេរជាទម្រង់ ax + b = 0 ដែល a និង b ជាចំនួនពិត ហើយ a ≠ 0។","<b>ច្បាប់ប្តូរអង្គ៖</b> ពេលប្តូរតួពីអង្គមួយទៅអង្គមួយទៀត ត្រូវប្តូរសញ្ញា (+ ទៅ −, − ទៅ +)។","<b>ច្បាប់គុណ/ចែក៖</b> អាចគុណ ឬចែកអង្គទាំងពីរនឹងចំនួនដូចគ្នា ដែលមិនស្មើសូន្យ។"],
+formulas:["ax + b = 0  ⇒  x = −b/a  (a ≠ 0)","a(x + b) = c  ⇒  x + b = c/a","ផ្ទៀងផ្ទាត់៖ ជំនួសតម្លៃ x ចូលសមីការដើម អង្គទាំងពីរត្រូវស្មើគ្នា"],
+steps:["បើកវង់ក្រចក (បើមាន)","ប្តូរតួមាន x ទៅអង្គមួយ តួចំនួនទៅអង្គមួយទៀត","ចងក្រងតួដូចគ្នា","ចែកអង្គទាំងពីរនឹងមេគុណនៃ x","ផ្ទៀងផ្ទាត់ចម្លើយ"],
+ex:[["ឧទាហរណ៍ ១ (ងាយ)","ដោះស្រាយ 2x + 5 = 11","2x = 11 − 5 = 6 ⇒ x = 6 ÷ 2 = 3។ ផ្ទៀងផ្ទាត់៖ 2(3) + 5 = 11 ✓"],
+["ឧទាហរណ៍ ២ (មធ្យម)","ដោះស្រាយ 4(x − 1) = 2x + 6","បើកវង់ក្រចក៖ 4x − 4 = 2x + 6 ⇒ 4x − 2x = 6 + 4 ⇒ 2x = 10 ⇒ x = 5។ ផ្ទៀងផ្ទាត់៖ 4(4) = 16 និង 2(5) + 6 = 16 ✓"],
+["ឧទាហរណ៍ ៣ (ពិបាក)","ដោះស្រាយ x/2 + x/3 = 10","គុណអង្គទាំងពីរនឹង 6៖ 3x + 2x = 60 ⇒ 5x = 60 ⇒ x = 12។ ផ្ទៀងផ្ទាត់៖ 6 + 4 = 10 ✓"]],
+pr:[["ងាយ","x + 7 = 12","x = 5","x = 12 − 7 = 5"],["ងាយ","3x = 18","x = 6","x = 18 ÷ 3 = 6"],["ងាយ","x − 4 = 9","x = 13","x = 9 + 4 = 13"],["ងាយ","2x + 1 = 9","x = 4","2x = 8 ⇒ x = 4"],
+["មធ្យម","5x − 3 = 2x + 9","x = 4","5x − 2x = 9 + 3 ⇒ 3x = 12 ⇒ x = 4"],["មធ្យម","3(x + 2) = 21","x = 5","x + 2 = 7 ⇒ x = 5"],["មធ្យម","x/3 − 1 = 4","x = 15","x/3 = 5 ⇒ x = 15"],["មធ្យម","2x − 7 = 5x + 8","x = −5","2x − 5x = 8 + 7 ⇒ −3x = 15 ⇒ x = −5"],
+["ពិបាក","(2x + 1)/3 = (x + 4)/2","x = 10","គុណឆ្លង៖ 2(2x + 1) = 3(x + 4) ⇒ 4x + 2 = 3x + 12 ⇒ x = 10"],["ពិបាក","ចំនួនគត់ពីរជាប់គ្នា មានផលបូក 51។ រកចំនួនទាំងពីរ។","25 និង 26","ឲ្យចំនួនតូច = x ⇒ x + (x + 1) = 51 ⇒ 2x = 50 ⇒ x = 25 ហើយចំនួនធំ = 26"]],
+test:[
+{q:"ដោះស្រាយ៖ 2x + 6 = 14",o:["x = 3","x = 4","x = 5","x = 8"],a:1,e:"2x = 8 ⇒ x = 4"},
+{q:"ដោះស្រាយ៖ 3x − 5 = 10",o:["x = 3","x = −5","x = 5","x = 15"],a:2,e:"3x = 15 ⇒ x = 5"},
+{q:"ដោះស្រាយ៖ x/2 + 3 = 7",o:["x = 2","x = 5","x = 8","x = 20"],a:2,e:"x/2 = 4 ⇒ x = 8"},
+{q:"ដោះស្រាយ៖ 5x = 3x + 12",o:["x = 2","x = 4","x = 6","x = 12"],a:2,e:"2x = 12 ⇒ x = 6"},
+{q:"ដោះស្រាយ៖ 2(x − 3) = 8",o:["x = 5","x = 7","x = 1","x = 11"],a:1,e:"x − 3 = 4 ⇒ x = 7"},
+{q:"ដោះស្រាយ៖ 4x + 1 = 2x − 5",o:["x = 3","x = −3","x = 2","x = −2"],a:1,e:"2x = −6 ⇒ x = −3"},
+{q:"សមីការមួយណាជាសមីការដឺក្រេទី១ មួយអញ្ញាត?",o:["x² + 1 = 0","2x − 7 = 0","x³ = 8","x² − x = 0"],a:1,e:"x មានស្វ័យគុណ ១ គឺ 2x − 7 = 0"},
+{q:"ដោះស្រាយ៖ 7 − x = 2",o:["x = −5","x = 5","x = 9","x = −9"],a:1,e:"−x = −5 ⇒ x = 5"},
+{q:"ដោះស្រាយ៖ (x + 1)/3 = 2",o:["x = 3","x = 5","x = 6","x = 7"],a:1,e:"x + 1 = 6 ⇒ x = 5"},
+{q:"ចតុកោណកែងមួយ បណ្តោយលើសទទឹង 3 ម និងបរិមាត្រ 26 ម។ រកទទឹង។",o:["4 ម","5 ម","6 ម","8 ម"],a:1,e:"2(x + x + 3) = 26 ⇒ 4x = 20 ⇒ x = 5"}],
+sum:["សមីការដឺក្រេទី១ មានទម្រង់ ax + b = 0 (a ≠ 0) ហើយមានចម្លើយ x = −b/a","ប្តូរអង្គត្រូវប្តូរសញ្ញា គុណ/ចែកត្រូវធ្វើទាំងពីរអង្គ","ត្រូវផ្ទៀងផ្ទាត់ចម្លើយជានិច្ច","ចំណោទអត្ថបទ៖ កំណត់អញ្ញាត → បង្កើតសមីការ → ដោះស្រាយ → សន្និដ្ឋាន"]
+}];
+function conv(t){return t.replace(/[A-Za-z0-9+\-−=×÷⇒≠()\/²³ ]+/g,function(m){var c=m.trim();if(!/[A-Za-z=+−×÷⇒≠\/²³]/.test(c))return m;var i=m.indexOf(c),l=m.slice(0,i),r=m.slice(i+c.length);c=c.replace(/(\([^()]*\)|[A-Za-z0-9]+)\/(\([^()]*\)|[A-Za-z0-9]+)/g,function(_,a,b){return"\\frac{"+a.replace(/^\(|\)$/g,"")+"}{"+b.replace(/^\(|\)$/g,"")+"}"}).replace(/−/g,"-").replace(/×/g,"\\times ").replace(/÷/g,"\\div ").replace(/⇒/g,"\\Rightarrow ").replace(/≠/g,"\\neq ").replace(/²/g,"^{2}").replace(/³/g,"^{3}");return l+"\\("+c+"\\)"+r})}
+function mp(o){if(typeof o=="string")return o.split(/(<[^>]+>)/).map(function(p,i){return i%2?p:conv(p)}).join("");if(Array.isArray(o))return o.map(mp);if(o&&typeof o=="object"){Object.keys(o).forEach(function(k){o[k]=mp(o[k])})}return o}
+DATA=mp(DATA);
+function tx(){try{if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([app]).catch(function(){})}catch(e){}}
+var app=document.getElementById("app"),S={ch:null,tab:0},tq=0,ts=0,tl=false;
+function ld(){try{return JSON.parse(localStorage.getItem("m9")||"{}")}catch(e){return{}}}
+function sv(o){try{localStorage.setItem("m9",JSON.stringify(o))}catch(e){}}
+function li(a){return"<ul>"+a.map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>"}
+function home(){
+  var p=ld(),best=p.best1,h='<h1>📐 គណិតវិទ្យា ថ្នាក់ទី៩</h1><p class="sub">ជ្រើសរើសជំពូកដើម្បីចាប់ផ្តើមរៀន</p>';
+  DATA.forEach(function(c){
+    var pct=best==null?0:best*10;
+    h+='<button class="card ch" onclick="openCh(0)"><span class="tag">ជំពូក '+c.id+'</span><br><b>'+c.title+'</b><div class="bar"><i style="width:'+pct+'%"></i></div><span class="muted">'+(best==null?"មិនទាន់ធ្វើតេស្ត":"ពិន្ទុតេស្ត​ល្អបំផុត "+best+"/10")+'</span></button>';
+  });
+  ["ប្រព័ន្ធសមីការ","អនុគមន៍","ធរណីមាត្រ"].forEach(function(t){h+='<div class="card ch off"><span class="tag">ឆាប់ៗនេះ</span><br><b>'+t+'</b></div>'});
+  app.innerHTML=h;
+}
+function openCh(t){S.ch=DATA[0];S.tab=t;view()}
+function view(){
+  var c=S.ch,T=["មេរៀន","ឧទាហរណ៍","លំហាត់","តេស្ត","សង្ខេប"];
+  var h='<button class="back" onclick="home()">← ត្រឡប់ក្រោយ</button><h1>'+c.title+'</h1><div class="tabs">';
+  T.forEach(function(n,i){h+='<button class="tab'+(i==S.tab?' on':'')+'" onclick="S.tab='+i+';tq=0;ts=0;view()">'+n+'</button>'});
+  h+='</div><div id="body"></div>';app.innerHTML=h;
+  var b=document.getElementById("body"),x="";
+  if(S.tab==0){
+    x='<div class="card"><h2>🎯 គោលបំណង</h2>'+li(c.goals)+'<h2>📖 ទ្រឹស្តី</h2>'+c.theory.map(function(t){return"<p>"+t+"</p>"}).join("")+'<h2>🧮 រូបមន្ត</h2>'+c.formulas.map(function(f){return'<div class="fm">'+f+'</div>'}).join("")+'<h2>ជំហានដោះស្រាយ</h2><ol>'+c.steps.map(function(s){return"<li>"+s+"</li>"}).join("")+'</ol></div>';
+  }else if(S.tab==1){
+    c.ex.forEach(function(e){x+='<div class="card"><span class="tag">'+e[0]+'</span><p><b>'+e[1]+'</b></p><div class="ans">'+e[2]+'</div></div>'});
+  }else if(S.tab==2){
+    c.pr.forEach(function(q,i){x+='<div class="card"><span class="tag">'+q[0]+'</span> <b>'+(i+1)+'.</b> '+q[1]+'<br><button class="btn sm" onclick="rv('+i+',this)">មើលចម្លើយ</button><div class="ans hide" id="a'+i+'"><b>'+q[2]+'</b><br>'+q[3]+'</div></div>'});
+  }else if(S.tab==3){b.innerHTML='<div class="card" id="tb"></div>';tq=0;ts=0;return tst()}
+  else{x='<div class="card"><h2>📝 សេចក្តីសង្ខេប</h2>'+li(c.sum)+'</div>'}
+  b.innerHTML=x;tx();
+}
+function rv(i,btn){document.getElementById("a"+i).classList.toggle("hide")}
+function tst(){
+  var T=S.ch.test,box=document.getElementById("tb");
+  if(tq>=T.length){
+    var p=ld();if(p.best1==null||ts>p.best1){p.best1=ts;sv(p)}
+    var m=ts>=9?"អស្ចារ្យណាស់! 🌟":ts>=7?"ល្អណាស់! 👍":ts>=5?"មធ្យម សូមរៀនឡើងវិញ 💪":"កុំបាក់ទឹកចិត្ត សូមពិនិត្យមេរៀនម្តងទៀត 📘";
+    box.innerHTML='<p class="center sub">លទ្ធផល</p><div class="score">'+ts+' / '+T.length+'</div><p style="text-align:center">'+m+'</p><button class="btn" onclick="tq=0;ts=0;tst()">ធ្វើម្តងទៀត</button>';return;
+  }
+  var d=T[tq];tl=false;
+  var h='<div class="bar"><i style="width:'+(tq/T.length*100)+'%"></i></div><p class="muted">សំណួរទី '+(tq+1)+' / '+T.length+' · ពិន្ទុ '+ts+'</p><p><b>'+d.q+'</b></p>';
+  d.o.forEach(function(o,k){h+='<button class="opt" onclick="pk('+k+')">'+o+'</button>'});
+  box.innerHTML=h+'<div id="fb"></div>';tx();
+}
+function pk(k){
+  if(tl)return;tl=true;
+  var d=S.ch.test[tq],bs=document.querySelectorAll("#tb .opt"),ok=k===d.a;
+  bs[d.a].classList.add("ok");if(!ok)bs[k].classList.add("bad");if(ok)ts++;
+  document.getElementById("fb").innerHTML='<div class="fb '+(ok?"ok":"bad")+'"><b>'+(ok?"ត្រឹមត្រូវ! 🎉":"មិនទាន់ត្រឹមត្រូវ")+'</b><br>'+d.e+'</div><button class="btn" onclick="tq++;tst()">'+(tq==S.ch.test.length-1?"មើលលទ្ធផល":"បន្ទាប់")+'</button>';tx();
+}
+home();
+</script>
+</body>
+</html>
